@@ -1,0 +1,86 @@
+# ============================================================
+# 🔄 WORD REVERSE & PALINDROME GAME
+# ============================================================
+# A simple Python mini-project that:
+# 1. Takes a word or phrase from the user
+# 2. Cleans the input
+# 3. Reverses the text
+# 4. Checks whether it is a palindrome
+#
+# Concepts practiced:
+# - input()
+# - strip()
+# - lower()
+# - replace()
+# - isalpha()
+# - slicing [::-1]
+# - if / else
+# - f-strings
+# ============================================================
+
+
+print("\n========================================")
+print("     🔄 WORD REVERSE & PALINDROME")
+print("========================================")
+
+print("\nWelcome to the Word Reverse Game!")
+print("Enter a word or phrase and let's reverse it.")
+
+
+# ------------------------------------------------------------
+# GET USER INPUT
+# ------------------------------------------------------------
+
+text = input("\nEnter a word or phrase: ").strip().lower()
+
+
+# ------------------------------------------------------------
+# CLEAN THE INPUT
+# ------------------------------------------------------------
+# Remove spaces, commas, and periods so we can
+# check the actual letters.
+
+clean_text = text.replace(" ", "")
+clean_text = clean_text.replace(",", "")
+clean_text = clean_text.replace(".", "")
+
+
+# ------------------------------------------------------------
+# VALIDATE THE INPUT
+# ------------------------------------------------------------
+
+print("\nChecking your input...")
+
+if clean_text.isalpha():
+
+    print("✅ Valid input! Starting the game...\n")
+
+    # --------------------------------------------------------
+    # REVERSE THE TEXT
+    # --------------------------------------------------------
+
+    reversed_text = clean_text[::-1]
+
+    print(f"Original : {clean_text}")
+    print(f"Reversed : {reversed_text}")
+
+
+    # --------------------------------------------------------
+    # CHECK FOR PALINDROME
+    # --------------------------------------------------------
+    # A palindrome reads the same forward and backward.
+
+    if clean_text == reversed_text:
+        print("\n🎉 It's a palindrome!")
+    else:
+        print("\n🔎 It's not a palindrome.")
+        print("\n No fruit for you! ")
+        print("Try something like: 'level' or 'madam'.")
+
+
+else:
+
+    print("\n❌ Invalid input.")
+    print("Please enter letters only.")
+    print("Game ended.")
+ 
